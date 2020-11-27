@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-	int N = 0, M = 0, i = 1;
+	int N = 0, M = 0;
 	char bufStub = 0;
 	while (1) {
 		bufStub = 0;
@@ -27,19 +27,24 @@ int main() {
 			return -1;
 		}
 	}
-	if (N < 0)
-		N *= -1;
-	if (M < 0)
-		M *= -1;
-	while (i * M <= N) {
-		if (N == i * M) {
-			printf("TRUE\n");
-			break;
+	do {
+		if (N > M) {
+			if (N % M == 0) {
+				printf("GCD = %d", M);
+				break;
+			}
+			else N %= M;
 		}
-		else i++;
-	}
-	if (!(N == i * M))
-		printf("FALSE\n");
+
+		else {
+			if (M % N == 0) {
+				printf("GCD = %d", N);
+				break;
+			}
+			else
+				M %= N;
+		}
+	} while (N != 0 || M != 0);
 	getchar();
 	return 0;
 }
