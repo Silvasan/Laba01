@@ -37,8 +37,6 @@ int main() {
 				scanf("%c", &bufStub);
 		}
 	}
-	
-
 	do {
 		if (N == 0 || M == 0) {
 			printf("Error!");
@@ -52,7 +50,8 @@ int main() {
 			N -= M;
 		else M -= N;
 	} while (N != M);
-	printf("GCD = %d", N);
+	if (N == M)
+		printf("GCD = %d", N);
 	getchar();
 	return 0;
 }
