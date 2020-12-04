@@ -42,6 +42,10 @@ int main() {
 	if (M < 0)
 		M = M * (-1);
 	while (i * M <= N) {
+		if (M == 0) {
+			printf("Error!\n");
+			break;
+		}
 		if (N == i * M) {
 			printf("TRUE\n");
 			break;
