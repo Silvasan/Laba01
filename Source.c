@@ -28,6 +28,11 @@ int main() {
 		}
 	}
 	do {
+		if (N == 0 || M == 0) {
+			printf("Error!");
+			break;
+		}
+
 		if (N > M) {
 			if (N % M == 0) {
 				printf("GCD = %d", M);
